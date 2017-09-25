@@ -1,0 +1,32 @@
+{
+  "name": "AloPeyk/AloPeyk-PHP-Rest-Example",
+  "type": "project",
+  "description": "Examples of `AloPeyk RESTful Api` usage",
+  "keywords": [
+    "AloPeyk",
+    "Business",
+    "Api",
+    "AloPeyk Api",
+    "AloPeyk Business Api",
+    "AloPeyk PHP",
+    "PHP",
+    "الوپیک",
+    "الوپيك"
+  ],
+  "authors": [
+    {
+      "name": "AloPeyk LTD",
+      "email": "admin@alopeyk.com"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.5.9",
+    "alopeyk/alopeyk-api-php": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "AloPeyk\\": "src/"
+    }
+  }
+}
