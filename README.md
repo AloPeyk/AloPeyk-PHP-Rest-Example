@@ -1,5 +1,10 @@
 # AloPeyk-PHP-Rest-Example
 
+[![License](https://poser.pugx.org/alopeyk/alopeyk-php-rest-example/license)](https://packagist.org/packages/alopeyk/alopeyk-php-rest-example)
+[![Latest Stable Version](https://poser.pugx.org/alopeyk/alopeyk-php-rest-example/v/stable)](https://packagist.org/packages/alopeyk/alopeyk-php-rest-example)
+[![Monthly Downloads](https://poser.pugx.org/alopeyk/alopeyk-php-rest-example/d/monthly)](https://packagist.org/packages/alopeyk/alopeyk-php-rest-example)
+
+
 This package is built to facilitate application development for AloPeyk RESTful API. For more information about this api, please visit [AloPeyk Documents](https://docs.alopeyk.com/)
 
 ## Installation
@@ -8,9 +13,9 @@ All Alopeyk API endpoints support the JWT authentication protocol. To start send
 Then you can install this package by using [Composer](http://getcomposer.org), running this command:
 
 ```sh
-composer require alopeyk/alopeyk-api-php
+composer create-project alopeyk/alopeyk-php-rest-example
 ```
-Link to Packagist: https://packagist.org/packages/alopeyk/alopeyk-api-php
+Link to Packagist: https://packagist.org/packages/alopeyk/alopeyk-php-rest-example
 
 ## Usage
 
