@@ -333,33 +333,34 @@ try {
      */
     $origin = new Address('origin', 'tehran', '35.755460', '51.416874');
     $origin->setAddress("... Behjat Abad, Tehran");
-    $origin->setDescription("Behjat Abad");
-    $origin->setUnit("44");
-    $origin->setNumber("1");
-    $origin->setPersonFullname("Leonardo DiCaprio");
-    $origin->setPersonPhone("09370000000");
+    $origin->setDescription("Behjat Abad");                                            // optional                            
+    $origin->setUnit("44");                                                            // optional
+    $origin->setNumber("1");                                                           // optional
+    $origin->setPersonFullname("Leonardo DiCaprio");                                   // optional
+    $origin->setPersonPhone("09370000000");                                            // optional
 
     /*
      * Create First Destination: N Sohrevardi Ave
      */
     $firstDest = new Address('destination', 'tehran', '35.758495', '51.442550');
     $firstDest->setAddress("... N Sohrevardi Ave, Tehran");
-    $firstDest->setDescription("N Sohrevardi Ave");
-    $firstDest->setUnit("55");
-    $firstDest->setNumber("2");
-    $firstDest->setPersonFullname("Eddie Redmayne");
-    $firstDest->setPersonPhone("09380000000");
+    $firstDest->setDescription("N Sohrevardi Ave");                                    // optional
+    $firstDest->setUnit("55");                                                         // optional
+    $firstDest->setNumber("2");                                                        // optional
+    $firstDest->setPersonFullname("Eddie Redmayne");                                   // optional
+    $firstDest->setPersonPhone("09380000000");                                         // optional
+    
 
     /*
      * Create Second Destination: Ahmad Qasir Bokharest St
      */
     $secondDest = new Address('destination', 'tehran', '35.895452', '51.589632');
     $secondDest->setAddress("... Ahmad Qasir Bokharest St, Tehran");
-    $secondDest->setDescription("Ahmad Qasir Bokharest St");
-    $secondDest->setUnit("66");
-    $secondDest->setNumber("3");
-    $secondDest->setPersonFullname("Matt Damon");
-    $secondDest->setPersonPhone("09390000000");
+    $secondDest->setDescription("Ahmad Qasir Bokharest St");                            // optional
+    $secondDest->setUnit("66");                                                         // optional
+    $secondDest->setNumber("3");                                                        // optional
+    $secondDest->setPersonFullname("Matt Damon");                                       // optional
+    $secondDest->setPersonPhone("09390000000");                                         // optional
 
     $order = new Order('motor_taxi', $origin, [$firstDest, $secondDest]);
     $order->setHasReturn(true);
