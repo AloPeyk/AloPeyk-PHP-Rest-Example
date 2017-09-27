@@ -105,7 +105,6 @@ The result will be an array of suggestions. Each one includes the region and the
 ```PHP
 use AloPeyk\Model\Location;
 
-
 // $locationName = null;   // returns AloPeyk Exception
 // $locationName = '';     // returns AloPeyk Exception
 $locationName = "أرژ";
