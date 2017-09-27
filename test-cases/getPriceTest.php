@@ -2,40 +2,32 @@
 
 require_once '../vendor/autoload.php';
 
-use AloPeyk\Exception\AloPeykApiException;
 use AloPeyk\Model\Address;
 use AloPeyk\Model\Order;
 
-$apiResponse = null;
-try {
-    /*
-     * Create Origin Address
-     */
-    $origin = new Address('origin', 'tehran', '35.723711', '51.410547');
 
-    /*
-     * Create First Destination
-     */
-    $firstDest = new Address('destination', 'tehran', '35.728457', '51.436969');
+/*
+ * Create Origin Address
+ */
+$origin = new Address('origin', 'tehran', '35.723711', '51.410547');
 
-    /*
-     * Create Second Destination
-     */
-    $secondDest = new Address('destination', 'tehran', '35.729379', '51.418151');
+/*
+ * Create First Destination
+ */
+$firstDest = new Address('destination', 'tehran', '35.728457', '51.436969');
 
-    /*
-     * Create New Order
-     */
-    $order = new Order('motor_taxi', $origin, [$firstDest, $secondDest]);
-    $order->setHasReturn(true);
+/*
+ * Create Second Destination
+ */
+$secondDest = new Address('destination', 'tehran', '35.729379', '51.418151');
 
-    $apiResponse = $order->getPrice();
+/*
+ * Create New Order
+ */
+$order = new Order('motor_taxi', $origin, [$firstDest, $secondDest]);
+$order->setHasReturn(true);
 
-} catch (AloPeykApiException $e) {
-    echo $e->errorMessage();
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
+$apiResponse = $order->getPrice();
 
 
 if ($apiResponse && $apiResponse->status == "success") {
@@ -78,7 +70,15 @@ if ($apiResponse && $apiResponse->status == "success") {
           </tr>";
 }
 
-// SAMPLE API RESPONSE: ------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+/* ----------------------------------------------------- *
+ * SAMPLE API RESPONSE:
+ * ----------------------------------------------------- */
 //{
 //  "status": "success",
 //  "message": null,

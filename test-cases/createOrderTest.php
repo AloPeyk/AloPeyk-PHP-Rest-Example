@@ -1,60 +1,60 @@
 <?php
 
 require_once '../vendor/autoload.php';
-use AloPeyk\Exception\AloPeykApiException;
+
 use AloPeyk\Model\Address;
 use AloPeyk\Model\Order;
 
-$apiResponse = null;
-try {
-    /*
-     * Create Origin: Behjat Abad
-     */
-    $origin = new Address('origin', 'tehran', '35.755460', '51.416874');
-    $origin->setAddress("... Behjat Abad, Tehran");
-    $origin->setDescription("Behjat Abad");
-    $origin->setUnit("44");
-    $origin->setNumber("1");
-    $origin->setPersonFullname("Leonardo DiCaprio");
-    $origin->setPersonPhone("09370000000");
 
-    /*
-     * Create First Destination: N Sohrevardi Ave
-     */
-    $firstDest = new Address('destination', 'tehran', '35.758495', '51.442550');
-    $firstDest->setAddress("... N Sohrevardi Ave, Tehran");
-    $firstDest->setDescription("N Sohrevardi Ave");
-    $firstDest->setUnit("55");
-    $firstDest->setNumber("2");
-    $firstDest->setPersonFullname("Eddie Redmayne");
-    $firstDest->setPersonPhone("09380000000");
+/*
+ * Create Origin: Behjat Abad
+ */
+$origin = new Address('origin', 'tehran', '35.755460', '51.416874');
+$origin->setAddress("... Behjat Abad, Tehran");
+$origin->setDescription("Behjat Abad");
+$origin->setUnit("44");
+$origin->setNumber("1");
+$origin->setPersonFullname("Leonardo DiCaprio");
+$origin->setPersonPhone("09370000000");
 
-    /*
-     * Create Second Destination: Ahmad Qasir Bokharest St
-     */
-    $secondDest = new Address('destination', 'tehran', '35.895452', '51.589632');
-    $secondDest->setAddress("... Ahmad Qasir Bokharest St, Tehran");
-    $secondDest->setDescription("Ahmad Qasir Bokharest St");
-    $secondDest->setUnit("66");
-    $secondDest->setNumber("3");
-    $secondDest->setPersonFullname("Matt Damon");
-    $secondDest->setPersonPhone("09390000000");
+/*
+ * Create First Destination: N Sohrevardi Ave
+ */
+$firstDest = new Address('destination', 'tehran', '35.758495', '51.442550');
+$firstDest->setAddress("... N Sohrevardi Ave, Tehran");
+$firstDest->setDescription("N Sohrevardi Ave");
+$firstDest->setUnit("55");
+$firstDest->setNumber("2");
+$firstDest->setPersonFullname("Eddie Redmayne");
+$firstDest->setPersonPhone("09380000000");
 
-    $order = new Order('motor_taxi', $origin, [$firstDest, $secondDest]);
-    $order->setHasReturn(true);
+/*
+ * Create Second Destination: Ahmad Qasir Bokharest St
+ */
+$secondDest = new Address('destination', 'tehran', '35.895452', '51.589632');
+$secondDest->setAddress("... Ahmad Qasir Bokharest St, Tehran");
+$secondDest->setDescription("Ahmad Qasir Bokharest St");
+$secondDest->setUnit("66");
+$secondDest->setNumber("3");
+$secondDest->setPersonFullname("Matt Damon");
+$secondDest->setPersonPhone("09390000000");
 
-    $apiResponse = $order->create($order);
+$order = new Order('motor_taxi', $origin, [$firstDest, $secondDest]);
+$order->setHasReturn(true);
 
-} catch (AloPeykApiException $e) {
-    echo $e->errorMessage();
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
+$apiResponse = $order->create($order);
 
 var_dump($apiResponse);
 
 
-// SAMPLE API RESPONSE: ------------------------------------------------------------------------------------------------
+
+
+
+
+
+/* ----------------------------------------------------- *
+ * SAMPLE API RESPONSE:
+ * ----------------------------------------------------- */
 //{
 //  "status": "success",
 //  "message": null,

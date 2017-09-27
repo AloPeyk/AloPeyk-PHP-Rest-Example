@@ -2,23 +2,24 @@
 
 require_once '../vendor/autoload.php';
 
-use AloPeyk\Exception\AloPeykApiException;
 use AloPeyk\Model\Location;
 
-$apiResponse = null;
-try {
-    $apiResponse = Location::getAddress("35.732595", "51.413379");
-} catch (AloPeykApiException $e) {
-    echo $e->errorMessage();
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
+
+$apiResponse = Location::getAddress("35.732595", "51.413379");
 
 if ($apiResponse && $apiResponse->status == "success") {
     echo $apiResponse->object->district;
 }
 
-// SAMPLE API RESPONSE: ------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+/* ----------------------------------------------------- *
+ * SAMPLE API RESPONSE:
+ * ----------------------------------------------------- */
 //{
 //  "status": "success",
 //  "message": "findPlace",

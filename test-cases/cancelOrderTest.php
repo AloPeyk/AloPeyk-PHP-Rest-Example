@@ -2,26 +2,27 @@
 
 require_once '../vendor/autoload.php';
 
-use AloPeyk\Exception\AloPeykApiException;
 use AloPeyk\Model\Order;
 
-$apiResponse = null;
-try {
-    // $orderID = "   300 ";     // works fine as 300
-    // $orderID = "   300<p>";   // works fine as 300
-    // $orderID = '';            // throws AloPeykException
-    // $orderID = null;          // throws AloPeykException
-    $orderID = 300;
-    $apiResponse = Order::cancel($orderID);
-} catch (AloPeykApiException $e) {
-    echo $e->errorMessage();
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
+
+// $orderID = "   300 ";     // works fine as 300
+// $orderID = "   300<p>";   // works fine as 300
+// $orderID = '';            // throws AloPeykException
+// $orderID = null;          // throws AloPeykException
+$orderID = 300;
+$apiResponse = Order::cancel($orderID);
 
 var_dump($apiResponse);
 
-// SAMPLE API RESPONSE: ------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+/* ----------------------------------------------------- *
+ * SAMPLE API RESPONSE:
+ * ----------------------------------------------------- */
 //{
 //  "status": "success",
 //  "message": null,

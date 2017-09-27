@@ -2,20 +2,13 @@
 
 require_once '../vendor/autoload.php';
 
-use AloPeyk\Exception\AloPeykApiException;
 use AloPeyk\Model\Location;
 
-$apiResponse = null;
-try {
-    // $locationName = null;   // returns AloPeyk Exception
-    // $locationName = '';     // returns AloPeyk Exception
-    $locationName = "أرژ";
-    $apiResponse = Location::getSuggestions($locationName);
-} catch (AloPeykApiException $e) {
-    echo $e->errorMessage();
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
+
+// $locationName = null;   // returns AloPeyk Exception
+// $locationName = '';     // returns AloPeyk Exception
+$locationName = "أرژ";
+$apiResponse = Location::getSuggestions($locationName);
 
 if ($apiResponse && $apiResponse->status == "success") {
     $locations = $apiResponse->object;
@@ -28,7 +21,15 @@ if ($apiResponse && $apiResponse->status == "success") {
     echo "</ol>";
 }
 
-// SAMPLE API RESPONSE: ------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+/* ----------------------------------------------------- *
+ * SAMPLE API RESPONSE:
+ * ----------------------------------------------------- */
 //{
 //  "status": "success",
 //  "message": "autoComplete",

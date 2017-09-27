@@ -3,23 +3,24 @@
 require_once '../vendor/autoload.php';
 
 use AloPeyk\AloPeykApiHandler;
-use AloPeyk\Exception\AloPeykApiException;
 
-$apiResponse = null;
-try {
-    $apiResponse = AloPeykApiHandler::authenticate();
-} catch (AloPeykApiException $e) {
-    echo $e->errorMessage();
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
+
+$apiResponse = AloPeykApiHandler::authenticate();
 
 if ($apiResponse && $apiResponse->status == "success") {
     $user = $apiResponse->object->user;
     echo $user->firstname . " " . $user->lastname;
 }
 
-// SAMPLE API RESPONSE: ------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+/* ----------------------------------------------------- *
+ * SAMPLE API RESPONSE:
+ * ----------------------------------------------------- */
 //{
 //  "status": "success",
 //  "object": {

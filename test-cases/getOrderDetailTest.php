@@ -3,25 +3,26 @@
 require_once '../vendor/autoload.php';
 
 use AloPeyk\Model\Order;
-use AloPeyk\Exception\AloPeykApiException;
 
-$apiResponse = null;
-try {
-    // $orderID = "   309 ";
-    // $orderID = "   309<p>";
-    // $orderID = '';
-    // $orderID = null;
-    $orderID = 309;
-    $apiResponse = Order::getDetails($orderID);
-} catch (AloPeykApiException $e) {
-    echo $e->errorMessage();
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
+
+// $orderID = "   309 ";
+// $orderID = "   309<p>";
+// $orderID = '';
+// $orderID = null;
+$orderID = 309;
+$apiResponse = Order::getDetails($orderID);
 
 var_dump($apiResponse);
 
-// SAMPLE API RESPONSE: ------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+/* ----------------------------------------------------- *
+ * SAMPLE API RESPONSE:
+ * ----------------------------------------------------- */
 //
 //"status": "success",
 //  "message": null,
